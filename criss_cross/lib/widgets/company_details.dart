@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:profile/model/company_info.dart';
+import 'package:profile/widgets/chat_screen.dart';
 
 
 class CompanyDetails extends StatelessWidget {
@@ -163,7 +164,10 @@ class CompanyDetails extends StatelessWidget {
                 height: 40,
                 child: ElevatedButton(
                   onPressed: (){
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChatScreen()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
