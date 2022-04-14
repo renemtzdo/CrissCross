@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile/widgets/chat_screen.dart';
 
 class Applicant extends StatelessWidget {
   const Applicant({Key? key}) : super(key: key);
@@ -241,7 +242,8 @@ class Applicant extends StatelessWidget {
           child: FittedBox(
             child: FloatingActionButton(
               onPressed: () {
-                // Add your onPressed code here!
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChatScreen()));
               },
               backgroundColor: Colors.green,
               child: const Icon(Icons.check_outlined, color: Colors.white),
