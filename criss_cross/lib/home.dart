@@ -1,9 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:profile/widgets/company_list.dart';
+import 'package:profile/widgets/payment.dart';
 import 'package:profile/widgets/home_appbar.dart';
-import 'package:profile/widgets/searchbar.dart';
-import 'package:profile/widgets/tag_list.dart';
+import 'package:profile/widgets/gigs.dart';
+import 'package:profile/widgets/messages.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -19,7 +19,9 @@ class HomePage extends StatelessWidget {
             children: [
               Expanded(
                 flex: 2,
-                child: Container(),
+                child: Container(
+                    color: Colors.grey.withOpacity(0.1)
+                ),
 
               ),
               Expanded(
@@ -31,64 +33,16 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          Column(
+          ListView(
             children: [
               HomeAppbar(),
-              SearchBar(),
-              TagList(),
-              CompanyList(),
-
+              GigWidget(),
+              MessageWidget(),
+              PaymentWidget(),
             ],
           ),
         ],
       ),
-     /* floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-
-        },
-        elevation: 0,
-        backgroundColor: Theme.of(context).accentColor,
-        child: Icon(Icons.add, color: Colors.white),
-      ),
-
-      bottomNavigationBar: Theme(
-        data: ThemeData(
-          splashColor: Colors.transparent,
-          highlightColor: Colors.transparent
-        ),
-
-       child: BottomNavigationBar(
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          selectedItemColor: Theme.of(context).primaryColor,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              label: 'Home',
-              icon: Icon(Icons.home, size: 25)
-            ),
-            BottomNavigationBarItem(
-                label: 'Case',
-                icon: Icon(Icons.cases_outlined, size: 25)
-            ),
-            BottomNavigationBarItem(
-                label: '',
-                icon: Text(''),
-            ),
-            BottomNavigationBarItem(
-                label: 'Chat',
-                icon: Icon(Icons.chat_bubble_outline_sharp, size: 25)
-            ),
-            BottomNavigationBarItem(
-                label: 'person',
-                icon: Icon(Icons.person_outline_rounded, size: 25)
-            ),
-          ],
-        ),
-
-
-        ),*/
 
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 25.0),
@@ -98,25 +52,21 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.grey.withOpacity(0.1),
           buttonBackgroundColor:  Colors.yellow,
           height: 50,
-          items: <Widget>[
-            Icon(Icons.home, size: 26, color: Color(0xff01b2b8)),
-            Icon(Icons.cases_outlined, size: 26, color: Color(0xff01b2b8)),
-            Icon(Icons.add_outlined, size: 28, color: Color(0xff01b2b8)),
-            Icon(Icons.chat_bubble_outline_sharp, size: 26, color: Color(0xff01b2b8)),
-            Icon(Icons.person_outline_rounded, size: 26, color: Color(0xff01b2b8)),
+          items: const <Widget>[
+            Icon(Icons.home, size: 26, color: Color(0xffff8787)),
+            Icon(Icons.add_outlined, size: 28, color: Color(0xffff8787)),
+            Icon(Icons.chat_bubble_outline_sharp, size: 26, color: Color(0xffff8787)),
           ],
-          animationDuration: Duration(
+          animationDuration: const Duration(
             microseconds: 200
           ),
-          index: 2,
+          index: 0,
           animationCurve: Curves.bounceInOut,
           onTap: (index){
              debugPrint("Current Index is $index");
           },
         ),
       ),
-
-
     );
   }
 }

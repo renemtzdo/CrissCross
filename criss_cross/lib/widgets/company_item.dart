@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:profile/model/company_info.dart';
-import 'package:profile/widgets/company_list.dart';
+import 'package:profile/widgets/payment.dart';
 
 
 class CompanyItem extends StatelessWidget {
